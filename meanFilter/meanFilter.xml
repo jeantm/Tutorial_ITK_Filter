@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+    <category>Filtering.Arithmetic</category>
+    <title>Mean Image Filtering</title>
+    <description>Mian filter of a image</description>
+
+    <parameters>
+        <label>IO</label>
+        <description>Input/Output parameters</description>
+
+        <image>
+            <name>input</name>
+            <label>image input</label>
+            <channel>image</channel>
+            <index>0</index>
+            <description>image input</description>
+        </image>
+
+        <image>
+            <name>output</name>
+            <label>image output</label>
+            <channel>image</channel>
+            <index>1</index>
+            <description>image output</description>
+        </image>
+
+        <integer>
+            <name>radius1</name>
+            <longflag>radius1</longflag>
+            <flag>x</flag>
+            <label>radius1</label>
+            <description>1st radius value</description>
+            <constraints>
+            <minimum>1</minimum>
+            </constraints>
+        </integer>
+
+        <integer>
+            <name>radius2</name>
+            <longflag>radius2</longflag>
+            <flag>y</flag>
+            <label>radius2</label>
+            <description>2nd radius value</description>
+            <constraints>
+            <minimum>1</minimum>
+            </constraints>
+        </integer>
+    </parameters>
+
+</executable>
