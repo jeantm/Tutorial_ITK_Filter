@@ -2,10 +2,19 @@ cmake_minimum_required(VERSION 2.8)
 
 project(ownFilter)
 
+# Find SlicerExecutionModel
+find_package(SlicerExecutionModel REQUIRED)
+include(${SlicerExecutionModel_USE_FILE})
+include(${GenerateCLP_USE_FILE})
+
 # Find ITK
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-add_executable(ownFilter ownFilter.cpp)
+set(ownFilter_Source ownFilter.cxx)
 
-target_link_libraries(ownFilter ${ITK_LIBRARIES})
+SEMMacroBuildCLI(
+    NAME ownFilter
+    EXECUTABLE_ONLY
+    TARGET_LIBRARIES ${ITK_LIBRARIES}
+)

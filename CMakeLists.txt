@@ -5,17 +5,21 @@ project(projectFilter)
 option(ellipseCreation "ellipseCreation executable" ON)
 option(meanFilter "meanFilter executable" ON)
 option(medianFilter "medianFilter executable" ON)
-option(ownFilter "ownFilter executable" OFF)
+option(ownFilter "ownFilter executable" ON)
+
 
 if (ellipseCreation)
     add_subdirectory(ellipseCreation)
 endif ()
+
 if (meanFilter)
     add_subdirectory(meanFilter)
 endif ()
+
 if (medianFilter)
     add_subdirectory(medianFilter)
 endif ()
+
 if (ownFilter)
     add_subdirectory(ownFilter)
 endif ()

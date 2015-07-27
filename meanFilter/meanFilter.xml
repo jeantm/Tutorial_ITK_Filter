@@ -2,7 +2,7 @@
 <executable>
     <category>Filtering.Arithmetic</category>
     <title>Mean Image Filtering</title>
-    <description>Mian filter of a image</description>
+    <description>Mean filter of a image</description>
 
     <parameters>
         <label>IO</label>

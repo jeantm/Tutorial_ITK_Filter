@@ -6,6 +6,6 @@ project(medianFilter)
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-add_executable(medianFilter medianFilter.cpp)
+add_executable(medianFilter medianFilter.cxx)
 
 target_link_libraries(medianFilter ${ITK_LIBRARIES})

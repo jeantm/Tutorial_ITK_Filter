@@ -6,6 +6,6 @@ project(ellipseCreation)
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-add_executable(ellipseCreation ellipseCreation.cpp)
+add_executable(ellipseCreation ellipseCreation.cxx)
 
 target_link_libraries(ellipseCreation ${ITK_LIBRARIES})
