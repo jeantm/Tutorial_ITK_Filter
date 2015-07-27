@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(ownFilter)
+project(multiThreadedOwnFilter)
 
 # Find SlicerExecutionModel
 find_package(SlicerExecutionModel REQUIRED)
@@ -11,10 +11,10 @@ include(${GenerateCLP_USE_FILE})
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-set(ownFilter_Source ownFilter.cxx)
+set(multiThreadedOwnFilter_Source multiThreadedOwnFilter.cxx)
 
 SEMMacroBuildCLI(
-    NAME ownFilter
+    NAME multiThreadedOwnFilter
     EXECUTABLE_ONLY
     TARGET_LIBRARIES ${ITK_LIBRARIES}
 )
