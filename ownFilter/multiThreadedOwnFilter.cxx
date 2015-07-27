@@ -1,8 +1,8 @@
 #include "itkImage.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
-#include "ownFilter.h"
-#include "ownFilterCLP.h"
+#include "multiThreadedOwnFilter.h"
+#include "multiThreadedOwnFilterCLP.h"
 
 
 int main( int argc, char ** argv )
@@ -28,7 +28,7 @@ int main( int argc, char ** argv )
         typedef itk::ImageFileReader< InputImageType > ReaderType;
         typedef itk::ImageFileWriter< OutputImageType > WriterType;
 
-        typedef itk::OwnFilter< InputImageType > FilterType;
+        typedef itk::MultiThreadedOwnFilter< InputImageType > FilterType;
 
         // Create the reader and the writer
         ReaderType::Pointer reader = ReaderType::New();

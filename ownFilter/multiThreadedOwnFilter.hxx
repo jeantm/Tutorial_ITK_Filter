@@ -1,7 +1,7 @@
-#ifndef __ownFilter_hxx
-#define __ownFilter_hxx
+#ifndef __multiThreadedOwnFilter_hxx
+#define __multiThreadedOwnFilter_hxx
  
-#include "ownFilter.h"
+#include "multiThreadedOwnFilter.h"
 #include "itkObjectFactory.h"
 #include "itkImageRegionIterator.h"
 #include "itkImageRegionConstIterator.h"
@@ -10,7 +10,8 @@ namespace itk
 {
      
     template< class TImage>
-    void OwnFilter< TImage>::GenerateData()
+    void MultiThreadedOwnFilter< TImage>::ThreadedGenerateData(const OutputImageRegionType & region,
+                                                               ThreadIdType threadId)
     {
         typename TImage::ConstPointer inputPtr = this->GetInput(0);
         typename TImage::Pointer outputPtr = this->GetOutput(0);

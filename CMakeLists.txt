@@ -5,7 +5,7 @@ project(projectFilter)
 option(ellipseCreation "ellipseCreation executable" ON)
 option(meanFilter "meanFilter executable" ON)
 option(medianFilter "medianFilter executable" ON)
-option(ownFilter "ownFilter executable" ON)
+option(multiThreadedOwnFilter "multiThreadedOwnFilter executable" ON)
 
 
 if (ellipseCreation)
@@ -20,6 +20,6 @@ if (medianFilter)
     add_subdirectory(medianFilter)
 endif ()
 
-if (ownFilter)
+if (multiThreadedOwnFilter)
     add_subdirectory(ownFilter)
 endif ()
