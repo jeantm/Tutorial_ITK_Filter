@@ -13,8 +13,13 @@ include(${ITK_USE_FILE})
 
 set(multiThreadedOwnFilter_Source multiThreadedOwnFilter.cxx)
 
+
 SEMMacroBuildCLI(
     NAME multiThreadedOwnFilter
     EXECUTABLE_ONLY
     TARGET_LIBRARIES ${ITK_LIBRARIES}
 )
+
+if (BUILD_TESTING)
+    add_subdirectory(Testing)
+endif ()

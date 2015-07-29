@@ -5,7 +5,7 @@
 
 int main(int argc, char ** argv)
 {
-    if (argc < 2)
+    if (argc != 2)
     {
         printf("Wrong Number of inputs for this main./n");
         return EXIT_FAILURE;

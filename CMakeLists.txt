@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 2.8)
 
 project(projectFilter)
 
+option(BUILD_TESTING "tests executable" ON)
+include(CTest)
+include(ExternalData)
+
+
 option(ellipseCreation "ellipseCreation executable" ON)
 option(meanFilter "meanFilter executable" ON)
 option(medianFilter "medianFilter executable" ON)
