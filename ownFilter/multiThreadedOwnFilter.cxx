@@ -1,17 +1,17 @@
+#include <iostream>
 #include "itkImage.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
 #include "multiThreadedOwnFilter.h"
 #include "multiThreadedOwnFilterCLP.h"
 
-
-int main( int argc, char ** argv )
+int main( int argc, char * argv[] )
 {
     PARSE_ARGS;
     
     if ( argc != 3 )
     {
-        printf("Wrong Number of inputs for this main./n");
+        std::cerr << "Wrong Number of inputs for this main.\n" <<std::endl;
         return EXIT_FAILURE;
     }
 

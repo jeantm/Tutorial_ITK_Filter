@@ -1,3 +1,4 @@
+#include <iostream>
 #include "itkImage.h"
 #include "itkImageFileWriter.h"
 #include "itkImageRegionIterator.h"
@@ -7,7 +8,7 @@ int main(int argc, char ** argv)
 {
     if (argc != 2)
     {
-        printf("Wrong Number of inputs for this main./n");
+        std::cerr << "Wrong Number of inputs for this main.\n" <<std::endl;
         return EXIT_FAILURE;
     }
 
@@ -51,12 +52,15 @@ int main(int argc, char ** argv)
             
 
             if ( ( ( xc*xc )+( yc*yc ) < ( radius*radius ) ) || ( ( ( x*x )/( a*a )+( y*y )/( b*b ) ) < 1 ) )
-            //if ( ( ( x*x )/( a*a )+( y*y )/( b*b ) ) < 1 )
             {
                 cIt.Set( 255 );
             }
 
-            else cIt.Set( 0 );
+            else
+            {
+                cIt.Set( 0 );
+            }
+
         }
 
 

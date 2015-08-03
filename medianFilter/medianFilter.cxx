@@ -1,3 +1,4 @@
+#include <iostream>
 #include "itkImage.h"
 #include "itkImageFileReader.h"
 #include "itkImageFileWriter.h"
@@ -8,7 +9,7 @@ int main(int argc, char ** argv)
 {
     if (argc != 3)
     {
-        printf("Wrong Number of inputs for this main./n");
+        std::cerr << "Wrong Number of inputs for this main.\n" <<std::endl;
         return EXIT_FAILURE;
     }
 

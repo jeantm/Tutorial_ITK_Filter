@@ -18,8 +18,12 @@ include_directories(${CMAKE_SOURCE_DIR})
 
 # Add the executable for the tests and linked the != libraries needed
 add_executable(ownFilterTests ownFilterTests.cxx)
-target_link_libraries(ownFilterTests ${ITK_LIBRARIES})
 target_link_libraries(ownFilterTests multiThreadedOwnFilterLib)
+
+# Add the executable for the tests and linked the != libraries needed -- Exceptions
+add_executable(ownFilterExceptions ownFilterExceptions.cxx)
+target_link_libraries(ownFilterExceptions multiThreadedOwnFilterLib)
+
 
 # Test checking that the program cannot run without arguments
 ExternalData_add_test(
@@ -32,16 +36,13 @@ set_tests_properties(OpenFileTest PROPERTIES WILL_FAIL true )
 ExternalData_add_test(
         MY_DATA
         NAME WrongInputFileName
-        COMMAND $<TARGET_FILE:multiThreadedOwnFilter>
-    WrongInput1.png
-    WrongOutput.png
+        COMMAND $<TARGET_FILE:ownFilterExceptions>
+    ModuleEntryPoint
+        WrongInput
+        ${ResultYinYang}
+
 )
-set_tests_properties( WrongInputFileName PROPERTIES WILL_FAIL true )
-set_tests_properties(
-WrongInputFileName PROPERTIES
-PASS_REGULAR_EXPRESSION
-"Exception"
-)
+#set_tests_properties( WrongInputFileName PROPERTIES WILL_FAIL true )
 
 # Tests checking that the output image is what we expect
 ExternalData_add_test(
