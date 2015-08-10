@@ -1,9 +1,6 @@
 #ifndef EXCEPTIONTESTMAIN_H
 #define EXCEPTIONTESTMAIN_H
 
-
-
-
 // This file is used to create TestDriver executables
 // These executables are able to register a function pointer to a string name
 // in a lookup table. By including this file, it creates a main function
@@ -39,7 +36,7 @@ std::map<std::string, MainFuncPointer> StringToTestFunctionMap;
 
 #define REGISTER_TEST(exceptionTest) \\
 extern int exceptionTest(int, char *[]); \
-StringToTestFunctionMap[#exceptionTest] = exceptionTest
+StringToTestFunctionMap[#exceptionTest] = exceptionTest;
 void RegisterExceptionTests();
 void PrintAvailableExceptionTests();
 

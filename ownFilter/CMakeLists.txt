@@ -11,9 +11,6 @@ include(${GenerateCLP_USE_FILE})
 find_package(ITK REQUIRED)
 include(${ITK_USE_FILE})
 
-set(multiThreadedOwnFilter_Source multiThreadedOwnFilter.cxx)
-
-
 SEMMacroBuildCLI(
     NAME multiThreadedOwnFilter
     EXECUTABLE_ONLY
